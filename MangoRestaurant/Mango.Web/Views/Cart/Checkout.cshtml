@@ -1,5 +1,9 @@
 ﻿@model Mango.Web.Models.Dtos.CartDto
 
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-warning" role="alert">@TempData["Error"]</div>
+}
 @if (Model != null && Model.CartDetails.Count() > 0)
 {
 
@@ -49,7 +53,7 @@
 
                         <div class="col-12 pb-4">
                             <label class="col-form-label">Expiry :</label>
-                            <input asp-for="CartHeader.ExpiryMinthYear" placeholder="MMYY" class="form-control" />
+                            <input asp-for="CartHeader.ExpiryMonthYear" placeholder="MMYY" class="form-control" />
                         </div>
                     </div>
                 </div>

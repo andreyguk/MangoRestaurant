@@ -83,7 +83,7 @@ namespace Mango.Services.OrderAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ExpiryMinthYear")
+                    b.Property<string>("ExpiryMonthYear")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -122,13 +122,13 @@ namespace Mango.Services.OrderAPI.Migrations
 
             modelBuilder.Entity("Mango.Services.OrderAPI.Models.OrderDetail", b =>
                 {
-                    b.HasOne("Mango.Services.OrderAPI.Models.OrderHeader", "OrderHeader")
+                    b.HasOne("Mango.Services.OrderAPI.Models.OrderHeader", "OrderHeaders")
                         .WithMany("OrderDetails")
                         .HasForeignKey("OrderHeaderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("OrderHeader");
+                    b.Navigation("OrderHeaders");
                 });
 
             modelBuilder.Entity("Mango.Services.OrderAPI.Models.OrderHeader", b =>

@@ -16,6 +16,6 @@ namespace Mango.Web.Models.Dtos
         public string Email { get; set; }
         public string CardNumber { get; set; }
         public string CVV { get; set; }
-        public string ExpiryMinthYear { get; set; }
+        public string ExpiryMonthYear { get; set; }
     }
 }

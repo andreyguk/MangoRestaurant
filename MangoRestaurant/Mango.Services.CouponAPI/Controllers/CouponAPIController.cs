@@ -16,8 +16,7 @@ namespace Mango.Services.CouponAPI.Controllers
             _couponRepository = shoppingCartRepository;
             this._responseDto = new ResponseDto();
         }
-
-        [Authorize]
+     
         [HttpGet("{code}")]
         public async Task<object> GetGetDiscountForCode(string code)
         {

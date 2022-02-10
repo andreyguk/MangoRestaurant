@@ -1489,6 +1489,20 @@
             "rid": "win"
           }
         }
+      },
+      "Mango.MessageBus/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Azure.Messaging.ServiceBus": "7.5.1",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Mango.MessageBus.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mango.MessageBus.dll": {}
+        }
       }
     }
   },
@@ -5177,6 +5191,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Mango.MessageBus/1.0.0": {
+      "type": "project",
+      "path": "../Mango.MessageBus/Mango.MessageBus.csproj",
+      "msbuildProject": "../Mango.MessageBus/Mango.MessageBus.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5184,6 +5203,7 @@
       "AutoMapper >= 11.0.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 11.0.0",
       "Azure.Messaging.ServiceBus >= 7.5.1",
+      "Mango.MessageBus >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.1",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.1",
@@ -5218,7 +5238,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\projects\\MangoRestaurant\\MangoRestaurant\\Mango.MessageBus\\Mango.MessageBus.csproj": {
+              "projectPath": "D:\\projects\\MangoRestaurant\\MangoRestaurant\\Mango.MessageBus\\Mango.MessageBus.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

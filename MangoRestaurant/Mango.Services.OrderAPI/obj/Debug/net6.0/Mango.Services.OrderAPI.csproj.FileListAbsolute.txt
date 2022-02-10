@@ -68,3 +68,6 @@ D:\projects\MangoRestaurant\MangoRestaurant\Mango.Services.OrderAPI\obj\Debug\ne
 D:\projects\MangoRestaurant\MangoRestaurant\Mango.Services.OrderAPI\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\projects\MangoRestaurant\MangoRestaurant\Mango.Services.OrderAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
 D:\projects\MangoRestaurant\MangoRestaurant\Mango.Services.OrderAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\projects\MangoRestaurant\MangoRestaurant\Mango.Services.OrderAPI\bin\Debug\net6.0\Mango.MessageBus.dll
+D:\projects\MangoRestaurant\MangoRestaurant\Mango.Services.OrderAPI\bin\Debug\net6.0\Mango.MessageBus.pdb
+D:\projects\MangoRestaurant\MangoRestaurant\Mango.Services.OrderAPI\obj\Debug\net6.0\Mango.Services.OrderAPI.csproj.AssemblyReference.cache

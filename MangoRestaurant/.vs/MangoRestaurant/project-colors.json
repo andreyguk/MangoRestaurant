@@ -55,7 +55,27 @@
       "ProjectGuid": "582c19b4-af88-4ca1-b003-49f4851acf17",
       "DisplayName": "Mango.Services.CouponAPI",
       "ColorIndex": 9
+    },
+    "f9ea103c-5fda-4670-9ad8-7ad0074212b4": {
+      "ProjectGuid": "f9ea103c-5fda-4670-9ad8-7ad0074212b4",
+      "DisplayName": "Mango.Services.OrderAPI",
+      "ColorIndex": 10
+    },
+    "24cc8930-92aa-464d-be56-0593b2d3f2aa": {
+      "ProjectGuid": "24cc8930-92aa-464d-be56-0593b2d3f2aa",
+      "DisplayName": "PaymentProcessor",
+      "ColorIndex": 11
+    },
+    "33d8295a-4507-432e-92c8-249a5de7b5d8": {
+      "ProjectGuid": "33d8295a-4507-432e-92c8-249a5de7b5d8",
+      "DisplayName": "Mango.MessageBus",
+      "ColorIndex": 12
+    },
+    "cb325df8-ced5-490c-894b-dd7fe52e838c": {
+      "ProjectGuid": "cb325df8-ced5-490c-894b-dd7fe52e838c",
+      "DisplayName": "Mango.Services.PaymentAPI",
+      "ColorIndex": 13
     }
   },
-  "NextColorIndex": 10
+  "NextColorIndex": 14
 }
