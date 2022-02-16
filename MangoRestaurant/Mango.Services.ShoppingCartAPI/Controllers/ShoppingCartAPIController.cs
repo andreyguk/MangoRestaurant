@@ -1,6 +1,7 @@
 ﻿using Mango.MessageBus;
 using Mango.Services.ShoppingCartAPI.Messages;
 using Mango.Services.ShoppingCartAPI.Models.Dtos;
+using Mango.Services.ShoppingCartAPI.RabbitMqSender;
 using Mango.Services.ShoppingCartAPI.Repository;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,12 +15,15 @@ namespace Mango.Services.ShoppingCartAPI.Controllers
         private readonly ICouponRepository _couponRepository;
         private readonly IMessageBus _messageBus;
         private readonly ResponseDto _response;
-        public ShoppingCartAPIController(IShoppingCartRepository shoppingCartRepository, ICouponRepository couponRepository, IMessageBus messageBus)
+        private readonly IRabbitMqCartMessageSender _rabbitMqCartMessageSender;
+        public ShoppingCartAPIController(IShoppingCartRepository shoppingCartRepository, ICouponRepository couponRepository,
+            IMessageBus messageBus, IRabbitMqCartMessageSender rabbitMqCartMessageSender)
         {
             _shoppingCartRepository = shoppingCartRepository;
             _couponRepository = couponRepository;
             _messageBus = messageBus;
             _response = new ResponseDto();
+            _rabbitMqCartMessageSender = rabbitMqCartMessageSender;
         }
         [HttpGet("GetCart/{userId}")]
         public async Task<object> GetCart(string userId)
@@ -128,26 +132,34 @@ namespace Mango.Services.ShoppingCartAPI.Controllers
             try
             {
                 var cart = await _shoppingCartRepository.GetCartByUserId(checkoutHeader.UsertId);
-                if (cart == null) 
+                if (cart == null)
                 {
                     return BadRequest();
                 }
-                if(!string.IsNullOrEmpty(checkoutHeader.CouponCode))
+                if (!string.IsNullOrEmpty(checkoutHeader.CouponCode))
                 {
                     var coupon = await _couponRepository.GetCouponByCode(checkoutHeader.CouponCode);
-                    if(checkoutHeader.DiscountTotal !=coupon.Discount)
+                    if (checkoutHeader.DiscountTotal != coupon.Discount)
                     {
-                        _response.IsSuccess=false;
+                        _response.IsSuccess = false;
                         _response.ErrorMessages = new List<string>() { "Coupon Price has changes, please confirm." };
                         _response.DisplayMassage = "Coupon Price has changes, please confirm.";
                         return _response;
                     }
                 }
                 checkoutHeader.CartDetails = cart.CartDetails;
+                //azure service bus
+                //topic
                 //await _messageBus.PublishMessage(checkoutHeader, "checkoutmessagetopic");
-                await _messageBus.PublishMessage(checkoutHeader, "checkoutqueue");                
+                //queue
+                //await _messageBus.PublishMessage(checkoutHeader, "checkoutqueue");                
+
+
+                //rabbitmq 
+                _rabbitMqCartMessageSender.SendMessage(checkoutHeader, "checkoutqueue");
+
                 await _shoppingCartRepository.ClearCart(checkoutHeader.UsertId);
-               
+
             }
             catch (Exception ex)
             {

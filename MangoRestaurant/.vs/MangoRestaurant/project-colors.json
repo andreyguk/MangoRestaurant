@@ -75,7 +75,17 @@
       "ProjectGuid": "cb325df8-ced5-490c-894b-dd7fe52e838c",
       "DisplayName": "Mango.Services.PaymentAPI",
       "ColorIndex": 13
+    },
+    "cb0facff-cd71-4f1c-9360-aa99b58b1222": {
+      "ProjectGuid": "cb0facff-cd71-4f1c-9360-aa99b58b1222",
+      "DisplayName": "Mango.Services.Email",
+      "ColorIndex": 14
+    },
+    "2d0da16e-c2b6-427f-82fa-de194592d496": {
+      "ProjectGuid": "2d0da16e-c2b6-427f-82fa-de194592d496",
+      "DisplayName": "Mango.Gateway",
+      "ColorIndex": 15
     }
   },
-  "NextColorIndex": 14
+  "NextColorIndex": 0
 }
