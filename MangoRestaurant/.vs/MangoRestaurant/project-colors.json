@@ -61,14 +61,14 @@
       "DisplayName": "Mango.Services.OrderAPI",
       "ColorIndex": 10
     },
-    "24cc8930-92aa-464d-be56-0593b2d3f2aa": {
-      "ProjectGuid": "24cc8930-92aa-464d-be56-0593b2d3f2aa",
-      "DisplayName": "PaymentProcessor",
-      "ColorIndex": 11
-    },
     "33d8295a-4507-432e-92c8-249a5de7b5d8": {
       "ProjectGuid": "33d8295a-4507-432e-92c8-249a5de7b5d8",
       "DisplayName": "Mango.MessageBus",
+      "ColorIndex": 11
+    },
+    "24cc8930-92aa-464d-be56-0593b2d3f2aa": {
+      "ProjectGuid": "24cc8930-92aa-464d-be56-0593b2d3f2aa",
+      "DisplayName": "PaymentProcessor",
       "ColorIndex": 12
     },
     "cb325df8-ced5-490c-894b-dd7fe52e838c": {

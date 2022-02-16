@@ -1,7 +1,8 @@
 ﻿
+using Mango.Services.OrderAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Mango.Services.OrderAPI.Models.DbContexts
+namespace Mango.Services.OrderAPI.DbContexts
 {
     public class ApplicationDbContext : DbContext
     {

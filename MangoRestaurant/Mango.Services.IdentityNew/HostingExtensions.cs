@@ -1,6 +1,7 @@
 using Duende.IdentityServer;
 using Duende.IdentityServer.Services;
 using Mango.Services.IdentityNew.Data;
+using Mango.Services.IdentityNew.Initializer;
 using Mango.Services.IdentityNew.Models;
 using Mango.Services.IdentityNew.Services;
 using Microsoft.AspNetCore.Identity;
@@ -39,6 +40,7 @@ namespace Mango.Services.IdentityNew
                 .AddAspNetIdentity<ApplicationUser>();
 
             builder.Services.AddScoped<IProfileService, ProfileService>();
+            builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 
             builder.Services.AddAuthentication()
                 .AddGoogle(options =>

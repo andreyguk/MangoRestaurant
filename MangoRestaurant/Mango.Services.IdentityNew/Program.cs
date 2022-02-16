@@ -1,4 +1,8 @@
 ﻿using Mango.Services.IdentityNew;
+using Mango.Services.IdentityNew.Data;
+using Mango.Services.IdentityNew.Initializer;
+using Mango.Services.IdentityNew.Models;
+using Microsoft.AspNetCore.Identity;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()
@@ -19,6 +23,16 @@ try
     var app = builder
         .ConfigureServices()
         .ConfigurePipeline();
+
+    
+
+    var scope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope();
+    var _userManager = scope.ServiceProvider.GetService<UserManager<ApplicationUser>>();
+    var _roleManager = scope.ServiceProvider.GetService<RoleManager<IdentityRole>>();
+    var a = scope.ServiceProvider.GetService<ApplicationDbContext>();
+    var dbInitializer = new DbInitializer(a, _userManager, _roleManager);
+    dbInitializer.Initialize();
+
 
     // this seeding is only for the template to bootstrap the DB and users.
     // in production you will likely want a different approach.

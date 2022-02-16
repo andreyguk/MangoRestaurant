@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
+using Mango.Services.OrderAPI.DbContexts;
 using Mango.Services.OrderAPI.Models;
-using Mango.Services.OrderAPI.Models.DbContexts;
 using Microsoft.EntityFrameworkCore;
 
 namespace Mango.Services.OrderAPI.Repository

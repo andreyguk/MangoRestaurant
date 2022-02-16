@@ -1,9 +1,9 @@
 using AutoMapper;
 using Mango.MessageBus;
 using Mango.Services.OrderAPI;
+using Mango.Services.OrderAPI.DbContexts;
 using Mango.Services.OrderAPI.Extensions;
 using Mango.Services.OrderAPI.Messaging;
-using Mango.Services.OrderAPI.Models.DbContexts;
 using Mango.Services.OrderAPI.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;

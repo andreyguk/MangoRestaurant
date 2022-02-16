@@ -20,6 +20,8 @@ namespace Mango.Services.IdentityNew.Initializer
             _roleManager = roleManager;
             _userManager = userManager;
         }
+
+      
         public void Initialize()
         {
             if (_roleManager.FindByNameAsync(SD.Admin).Result != null)

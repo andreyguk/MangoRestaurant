@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Mango.Services.OrderAPI.Migrations
 {
-    public partial class CreateOrderTables : Migration
+    public partial class chee : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -27,7 +27,7 @@ namespace Mango.Services.OrderAPI.Migrations
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CardNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CVV = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ExpiryMinthYear = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ExpiryMonthYear = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CartTotalItems = table.Column<int>(type: "int", nullable: false),
                     PaymentStatus = table.Column<bool>(type: "bit", nullable: false)
                 },
